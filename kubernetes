@@ -1,0 +1,31 @@
+# Set zone and region 
+$ gcloud config set compute/zone us-central1-a
+Updated property [compute/zone].
+$ gcloud config set compute/region us-central1
+Updated property [compute/region].
+
+# Set up the cluster - you might need to enable Kubernetes Engine API if you get 403 Error
+$ gcloud container clusters create my-first-cluster --num-nodes 1
+$ gcloud compute instances list
+NAME                                             ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+gke-my-first-cluster-default-pool-8fe0744c-lgcw  us-central1-a  n1-standard-1               10.128.0.6   35.239.88.229  RUNNING
+
+# Deploy wordpress to the instance 
+$ kubectl run wordpress --image=tutum/wordpress --port=80
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/wordpress created
+
+# Check the pods
+achaud16@cloudshell:~$ kubectl get pods
+NAME                         READY   STATUS    RESTARTS   AGE
+wordpress-5577b7bb5d-df9bk   1/1     Running   0          37s
+
+$ kubectl expose pod wordpress-5577b7bb5d-df9bk --name=wordpress --type=LoadBalancer
+service/wordpress exposed
+
+$ kubectl describe services wordpress
+Name:                     wordpress
+Namespace:                default
+Labels:                   pod-template-hash=5577b7bb5d
+
+# Ingress IP shows public IP of cluster pod

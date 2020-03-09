@@ -1,0 +1,6 @@
+Cloud Shell
+$gcloud auth list
+$gcloud config list project
+$gcloud config --help
+$gcloud config list
+$gcloud config list --all

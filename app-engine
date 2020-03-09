@@ -9,3 +9,15 @@ $ cd my_first_app/
 
 $ dev_appserver.py ./
 
+# Preview webapp
+
+$ gcloud app deploy app.yaml
+
+Deployed service [default] to [https://positive-theme-269921.appspot.com]
+
+You can stream logs from the command line by running:
+  $ gcloud app logs tail -s default
+
+To view your application in the web browser run:
+  $ gcloud app browse
+

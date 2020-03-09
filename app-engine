@@ -7,3 +7,5 @@ Updated property [compute/region].
 $ mkdir my_first_app
 $ cd my_first_app/
 
+$ dev_appserver.py ./
+

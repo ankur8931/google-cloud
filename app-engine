@@ -1,0 +1,9 @@
+$ gcloud config set compute/zone us-central1-a
+Updated property [compute/zone].
+
+$ gcloud config set compute/region us-central1
+Updated property [compute/region].
+
+$ mkdir my_first_app
+$ cd my_first_app/
+

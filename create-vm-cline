@@ -1,0 +1,25 @@
+#Create an instance
+achaud16@cloudshell:~$ gcloud compute instances create another-instance --zone us-central1-a
+Result:
+Created [https://www.googleapis.com/compute/v1/projects/positive-theme-269921/zones/us-central1-a/instances/another-instance].
+NAME              ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+another-instance  us-central1-a  n1-standard-1               10.128.0.3   35.239.88.229  RUNNING
+
+#Help commands
+$ gcloud compute instances create another-instance --help
+
+#Default values in config file - set zone 
+$gcloud config set compute/zone us-central1-c
+
+# Instance gets created in zone us-central1-c
+$ gcloud compute instances create another-instance2
+Created [https://www.googleapis.com/compute/v1/projects/positive-theme-269921/zones/us-central1-c/instances/another-instance2].
+NAME               ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+another-instance2  us-central1-c  n1-standard-1               10.128.0.4   35.232.42.231  RUNNING
+
+# Try ssh into instance present in central1-a
+$ gcloud compute ssh another-instance
+SSH fails
+
+# Try ssh into another-instance2 - works fine
+

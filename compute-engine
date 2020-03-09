@@ -33,3 +33,42 @@ docker containers
  - Storage options, perssitence (std., SSD, local SSD)
  - Load Balancing options (L4-7).
  - More sophisticated load balancing, higher up in protocol stack.
+ 
+-------------------------------------------
+3.15 Google Container Engine
+- Each VM has guest OS, not present in a container.
+- Container Cluster (Kubelets) managed by Kubernetes.
+- Coordinating machine - master node, with node instance -(kubelet). Kubelets contains pod - pods
+contains container.
+- VMs are slow to boot. 
+- GCE - can use Jenkins CI/CD. Packaging and deployment using package management
+- Stack driver for monitoring and logging.
+- Componentization - microservices.
+- Portability.
+- Rapid Deployment. 
+- Orchestration - Kubernetes clusters.
+- Image Registry.
+- Flexibility
+--------------------------------------------
+3.16 Scaling a container 
+- Compute Engine - attached disk. 
+- On disk files are ephemeral for container.
+- gcePersistentDisk - to make persistent disk.
+- Load Balancing - network layer. HTTP load balancing doesn't work simply with container engine.
+- GKE (Google Kubernetes Engine).
+- Pod (JSON, YML file). 
+- Each node Docker instance, kubelet agent.
+- Master - Kubernet API server, REST request, scheduling.
+- Node pool - subset of VMs that share same configuration.
+- Container Registry - Pvt Registry for Docker images.
+- Autoscaling - Cluster Autoscaler - periodically check and optimize cluster size, delete nodes, add nodes.
+
+
+
+
+
+
+
+
+
+

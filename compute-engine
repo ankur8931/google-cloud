@@ -62,7 +62,18 @@ contains container.
 - Node pool - subset of VMs that share same configuration.
 - Container Registry - Pvt Registry for Docker images.
 - Autoscaling - Cluster Autoscaler - periodically check and optimize cluster size, delete nodes, add nodes.
-
+--------------------------------------
+3.18  Google App Engine - create a complicated serverless app platform
+ - Standard (container), Flexible (tweak and customize stuff, compute engine VM).
+ - Instance classes <-> Billing.
+ - PaaS. 
+ Cloud Functions
+ - Connecting and building connected cloud services.
+ - Cloud functions written in JS
+ - Any Node.js env.
+ 
+ -----------------------------------------
+ 
 
 
 

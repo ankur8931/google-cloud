@@ -1,0 +1,35 @@
+Temporary VM instance is launched for gcloud. 
+Gcloud SDK can be used on your machine.
+-----------------------------------------------
+3-Compute
+3.1 
+App Engine - PaaS - serverless
+Compute Engine - IaaS - fully controllable / GPU
+Google Container Engine - kubernetes and hosting
+docker containers
+
+------------------------------------------------
+3.2
+1. Static website, HTML, autoscaling, media - 'google cloud storage' 
+   -Cloud storage bucker, storage.googleapi.com,
+   - Jekyll, Hugo
+   - Copy using webconsole, cloudshell
+   - Github, webhook to update script
+   - CI/CD - Jenkins, cloud storage plug-in
+   
+2. SSL, CDN (Storage++)
+   - Firebase hosting (https) + Google Cloud Storage
+   - not anything intellligent
+------------------------------------------------------
+3.3 Google Compute Engine  
+ - Fine grained load balancing control ?
+ - Load balancing, scaling.
+ - Exert more scaling
+ - you need IaaS.
+ - Config, admin, management all on you
+ - Google cloud launcher handled by Google.
+ - Cost estimates before deployment.
+ - Config., networkimg
+ - Storage options, perssitence (std., SSD, local SSD)
+ - Load Balancing options (L4-7).
+ - More sophisticated load balancing, higher up in protocol stack.

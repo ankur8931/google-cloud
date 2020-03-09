@@ -1,0 +1,26 @@
+# GCloud set the project ID
+$gcloud config set project [PROJECT_ID]
+
+# Setup the persistent disk 100GB, disk has to be in same zone as instance
+$gcloud compute disks create test-disk --size=100GB --zone us-central1-f
+WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
+Created [https://www.googleapis.com/compute/v1/projects/positive-theme-269921/zones/us-central1-f/disks/test-disk].
+NAME       ZONE           SIZE_GB  TYPE         STATUS
+test-disk  us-central1-f  100      pd-standard  READY
+
+# Disk can be added by Edit VM Instance -> Add Item. Attach via CLI
+$ gcloud compute instances attach-disk another-instance --disk test-disk --zone us-central1-f
+Updated [https://www.googleapis.com/compute/v1/projects/positive-theme-269921/zones/us-central1-f/instances/another-instance].
+
+# SSH into instance to verify
+$ gcloud compute ssh another-instance --zone us-central1-f
+
+$ ls -l /dev/disk/by-id/
+total 0
+lrwxrwxrwx 1 root root  9 Mar  9 20:43 google-persistent-disk-0 -> ../../sda
+lrwxrwxrwx 1 root root 10 Mar  9 20:43 google-persistent-disk-0-part1 -> ../../sda1
+lrwxrwxrwx 1 root root  9 Mar  9 20:43 google-persistent-disk-1 -> ../../sdb
+lrwxrwxrwx 1 root root  9 Mar  9 20:43 scsi-0Google_PersistentDisk_persistent-disk-0 -> ../../sda
+lrwxrwxrwx 1 root root 10 Mar  9 20:43 scsi-0Google_PersistentDisk_persistent-disk-0-part1 -> ../../sda1
+lrwxrwxrwx 1 root root  9 Mar  9 20:43 scsi-0Google_PersistentDisk_persistent-disk-1 -> ../../sdb
+ 

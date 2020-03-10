@@ -1,0 +1,34 @@
+Persistent disks vs SSDs
+Immutable blobs - Cloud storage
+OLTP - Cloud SQL, Cloud Spanner
+NoSQL - HTML/XML - Datastore
+No SQL- key/value - Hive/BigTable
+Data into cloud storage - transfer service
+------------------------------------------
+Block Storage - physical form - lower level of granularity, unstructured data.
+Meant to be used for VMs.
+Location tied to VM location.
+Compute Engine VMs - Persistent -> 1) Standard 2) SSD, Local SSD, Cloud Storage
+
+Cloud Storage - Buckets, globally unique, location, storage classes
+                Multi-regional, regional, nearline, coldline
+                HDFS=Cloud Storage in Google
+                
+SQL Interface for filedata - BigQuery=Hive (faster than Hive, columunar data storage format).
+                           - Latency higher than BigTable.
+                           - Cannot be used for OLTP, but OLAP.
+
+Transaction Processing - Cloud SQL, Cloud Spanner, ACID/OLTP. 
+                       - OLTP - strict write consistency, OLAP does not.
+                       - Cloud Spanner (horizontal scaling)
+                       
+Datastore - alternate for MongoDB, CouchDB, key/value structure.
+          - not used for OLTP, OLAP.
+          - query exec depends on size of returned set.
+          - don't use for write-intensive data.
+          
+Bigtable - Columunar datastore, fast scan of sequential key values. 
+         - Good for sparse data.
+        
+
+                
